@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:ital,wght@0,100;0,400;0,500;1,600&family=Nova+Square&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Jarvis</h1>
+    <p id="speech">Empty</p>
+    <p>Current theme source: <strong id="theme-source">System</strong></p>
+
+    <button id="toggle-dark-mode">Switch theme</button>
+
+    <button id="learnLang">Click</button>
+
+    <script src="./renderer.js"></script>
+    <script src="./app.js"></script>
+    <script src="./listener/activate.js"></script>
+
+    <script>
+      let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'ru-Ru'
+      
+      const button = document.getElementById('learnLang');
+      button.addEventListener('click', () => {
+          console.log("Hey")
+          document.getElementById('speech').innerText = `Default Language: ${recognition.lang}`;
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+body {
+  font-family: 'Inter', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Nova Square', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all, 0.2s;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: #333; color: white; }
+}
+
+@media (prefers-color-scheme: light) {
+  body { 
+    background: #ddd; 
+    color: black; 
+  }
+
+}
